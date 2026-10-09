@@ -1,0 +1,11 @@
+innocent_prefab: basic__Entity
+adversary_prefab: basic__Entity
+innocent_model: openrouter/google/gemini-2.5-flash
+adversary_model: openrouter/google/gemini-2.5-flash
+gm_model: openrouter/google/gemini-2.5-flash
+engine: sequential
+acting_order: fixed
+gm_prefab: dialogic__GameMaster
+max_steps: 30
+seeds: 3
+cognitive_profile: skeptical
