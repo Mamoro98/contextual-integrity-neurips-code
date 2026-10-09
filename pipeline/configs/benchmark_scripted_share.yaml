@@ -1,0 +1,16 @@
+# Rebuttal (bb87 Q4): trivial always-share baseline.
+# The innocent is a deterministic scripted actor that discloses the scenario's
+# target value every turn. Adversary + GM + judge run normally. Expected:
+# ASR = 1 on adversarial types (CI-app = 0), Sharing rate = 1 on Type IV.
+# Any miss = judge/string-match false negative = scoring-stack noise.
+scripted_innocent: share
+adversary_prefab: basic__Entity
+innocent_prefab: basic__Entity
+adversary_model: openrouter/google/gemini-2.5-flash
+gm_model: openrouter/google/gemini-2.5-flash
+judge_model: openrouter/google/gemini-2.5-flash
+engine: sequential
+acting_order: fixed
+gm_prefab: dialogic__GameMaster
+max_steps: 30
+seeds: 1
