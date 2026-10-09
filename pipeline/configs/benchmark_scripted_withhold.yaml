@@ -1,0 +1,16 @@
+# Rebuttal (bb87 Q4): trivial always-withhold baseline.
+# The innocent is a deterministic scripted actor that refuses every turn.
+# Adversary + GM + judge run normally so the transcript passes through the
+# real scoring stack. Expected: ASR = 0 on adversarial types (CI-app = 1.0),
+# Sharing rate = 0 on Type IV. Deviation = scoring-stack noise.
+scripted_innocent: withhold
+adversary_prefab: basic__Entity
+innocent_prefab: basic__Entity
+adversary_model: openrouter/google/gemini-2.5-flash
+gm_model: openrouter/google/gemini-2.5-flash
+judge_model: openrouter/google/gemini-2.5-flash
+engine: sequential
+acting_order: fixed
+gm_prefab: dialogic__GameMaster
+max_steps: 30
+seeds: 1
